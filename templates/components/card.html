@@ -1,0 +1,20 @@
+<div class="col">
+    <div class="card shadow-sm">
+        <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/sa6549607c78f5c11/image/i86150a51964976d0/version/1577359562/azores-most-beautiful-landscape-in-europe.jpg"
+             class="card-img-top" alt="...">
+        <div class="card-body">
+            <div class="card-body">
+                <h5 class="card-title">{{tour.name}}</h5>
+                <p class="card-text">{{tour.description}}</p>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                    {% for day in tour.days.split(',') %}
+                    <button type="button" class="btn btn-sm btn-outline-secondary" disabled>{{day}}
+                    </button>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

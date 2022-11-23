@@ -1,0 +1,30 @@
+[
+  {
+    "city_id": 1,
+    "user_id": 4,
+    "name": "Tour in Mexico",
+    "description": "A nice view of Mexico city",
+    "days": "MO,TU,FR"
+  },
+  {
+    "city_id": 2,
+    "user_id": 2,
+    "name": "Food tour",
+    "description": "Enjoy the most delicious food of the city",
+    "days": "MO,TU,FR"
+  },
+  {
+    "city_id": 1,
+    "user_id": 4,
+    "name": "Xochimilco tour",
+    "description": "Check the amazing views that we have for u",
+    "days": "TU,FR"
+  },
+  {
+    "city_id": 1,
+    "user_id": 4,
+    "name": "Teotihuacan tour",
+    "description": "Enjoy the amazing pyramids ",
+    "days": "TU,SA"
+  }
+]
