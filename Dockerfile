@@ -1,6 +1,14 @@
 FROM python:3.9
-COPY . /app
-WORKDIR /app
-RUN pip install -r requirements.txt
-EXPOSE $PORT
-CMD gunicorn --workers=4 --bind 0.0.0.0:$PORT app:app
+WORKDIR /
+COPY . .
+
+#Install the dependencies
+RUN apt-get -y update
+RUN apt-get update && apt-get install -y python3 python3-pip
+RUN pip3 install -r requirements.txt
+
+#Expose the required port
+EXPOSE 5000
+
+#Run the command
+CMD gunicorn main:app
