@@ -64,3 +64,6 @@ def create_tour():
     flash('Tour created', 'success')
 
     return render_template('index.html', **template_data)
+
+
+app.run(host='0.0.0.0', port='5000')
