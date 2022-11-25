@@ -1,9 +1,7 @@
 name: Deploy to heroku.
 
 # Trigger workflow when needed
-on:
-  push:
-    branches: [ workflow_dispatch ]
+on: workflow_dispatch
 
 # Your workflows jobs.
 jobs:
