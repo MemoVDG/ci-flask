@@ -2,7 +2,9 @@ import sys
 
 from os.path import dirname, join, abspath
 
-from flask import Flask, render_template, request, flash
+from flask import Flask, render_template, request, flash, jsonify
+
+from commands.set_up_db import SetupDB
 
 sys.path.insert(0, abspath(join(dirname(__file__), '.')))
 
@@ -64,6 +66,13 @@ def create_tour():
     flash('Tour created', 'success')
 
     return render_template('index.html', **template_data)
+
+
+@app.route('/setup', methods=['GET', ])
+def setup_db():
+    print('ok')
+    SetupDB().run_script()
+    return jsonify({'status': 'OK'})
 
 
 if __name__ == "__main__":
