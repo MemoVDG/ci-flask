@@ -1,0 +1,13 @@
+name: Deploy to AWS
+
+on: [ push ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Build Docker image
+        run: docker build -t memovdg/ci-flask -f Dockerfile .
