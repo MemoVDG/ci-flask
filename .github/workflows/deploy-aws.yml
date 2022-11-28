@@ -11,3 +11,20 @@ jobs:
 
       - name: Build Docker image
         run: docker build -t memovdg/ci-flask -f Dockerfile .
+
+      - name: Generate deployment package
+        run: zip -r deploy.zip *
+
+      - name: Get timestamp
+        uses: gerred/actions/current-time@master
+        id: current-time
+
+
+      - name: Run string replace
+        uses: frabert/replace-string-action@master
+        id: format-time
+        with:
+          pattern: '[:\.]+'
+          string: "${{ steps.current-time.outputs.time }}"
+          replace-with: '-'
+          flags: 'g'
