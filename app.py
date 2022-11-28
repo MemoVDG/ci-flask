@@ -70,7 +70,6 @@ def create_tour():
 
 @app.route('/setup', methods=['GET', ])
 def setup_db():
-    print('ok')
     SetupDB().run_script()
     return jsonify({'status': 'OK'})
 

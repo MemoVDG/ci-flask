@@ -9,9 +9,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Build Docker image
-        run: docker build -t memovdg/ci-flask -f Dockerfile_aws .
-
       - name: Generate deployment package
         run: zip -r deploy.zip *
 
@@ -34,8 +31,8 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          application_name: ci-flask
-          environment_name: Ciflask-env
+          application_name: flask-ci
+          environment_name: Flaskci-env
           version_label: "ci-flask-${{ steps.format-time.outputs.replaced }}"
           region: us-east-2
           deployment_package: deploy.zip
